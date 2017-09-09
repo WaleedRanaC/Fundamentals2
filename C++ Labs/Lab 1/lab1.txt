@@ -1,0 +1,71 @@
+// Waleed Rana
+// 9/6/2017
+// Lab 1
+// In this lab we will be asking for 3 names and 3 race times and displaying who got first second and third place
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+
+int main()
+{
+string name1 = "";
+string name2 = "";
+string name3 = "";
+double racetime1 = 0;
+double racetime2 = 0;
+double racetime3 = 0;
+
+// Getting Names of Runners
+cout<<"Name of Runner 1: ";
+getline(cin, name1);
+cout<<"Name of Runner 2: ";
+getline(cin, name2);
+cout<<"Name of Runner 3: ";
+getline(cin, name3);
+cout<<"\n";
+
+//Getting Runners racing times
+cout<<"Runner 1's Finishing Time : ";
+cin>>racetime1;
+
+int count1 = 1;
+string redo1 = "yes";
+while (redo1 == "yes")
+{	
+	cout<<"Runner 1's Finishing Time : ";
+	cin>>racetime1;
+	if (racetime1>=0)
+		if (count1 <= 4)
+			redo1 = "no";
+		if (count1 >= 5)
+			redo1 = "quit";
+	if (racetime1 < 0)
+		if (count1 <= 4)
+			cout<<"\n";
+			cout<<"Invalid Entry Must be greater than 0"<<endl;
+			count1 = count1 + 1;
+			redo1 = "yes"
+		if (count1 >= 5)
+			redo1 = "quit";
+}
+if (redo1=="quit")
+	cout<<"Too many Invalid Entries, No more Attempts";
+if (redo1=="no")
+	cout<<"\n";	
+	
+cout<<"Runner 2's Finishing Time : ";
+cin>>racetime2;
+cout<<"Runner 3's Finishing Time : ";
+cin>>racetime3;
+cout<<"\n";
+
+//Testing Printing them out
+cout<<name1<<" ran the race in "<<racetime1<<endl;
+cout<<name2<<" ran the race in "<<racetime2<<endl;
+cout<<name3<<" ran the race in "<<racetime3<<endl;
+
+
+return 0;
+}
