@@ -2,7 +2,7 @@
 // 9/6/2017
 // Lab 1
 // In this lab we will be asking for 3 names and 3 race times and displaying who got first second and third place
-
+#include <iomanip>
 #include<iostream>
 #include<string>
 using namespace std;
@@ -57,20 +57,20 @@ while (racetime1 < 0 || racetime2 < 0 || racetime3<0)
 	count ++;
 	cout<<"Attempt Number: "<<count<<endl;
 }
-
+//NEED TO FIX THAT SET PRECISION
 if (racetime1 > racetime2 && racetime1 > racetime3)
 {
 	if (racetime2 > racetime3)
 	{
-		cout<<"First Place: "<<name3<<" Time : "<<racetime3<<endl;
-		cout<<"Second Place: "<<name2<<" Time : "<<racetime2<<endl;
-		cout<<"Third Place: "<<name1<<" Time : "<<racetime1<<endl;
+		cout<<"1st Place: "<< setw(10) <<name3 <<" "<< setprecision(2)<<racetime3<<endl;
+		cout<<"2nd Place: "<< setw(10) <<name2 <<" "<< setprecision(2)<<racetime2<<endl;
+		cout<<"3rd Place: "<< setw(10) <<name1 <<" "<< setprecision(2)<<racetime1<<endl;
 	}
 	else
 	{
-		cout<<"First Place: "<<name2<<" Time : "<<racetime2<<endl;
-		cout<<"Second Place: "<<name3<<" Time : "<<racetime3<<endl;
-		cout<<"Third Place: "<<name1<<" Time : "<<racetime1<<endl;
+		cout<<"1st Place: "<< setw(10) <<name2<<" "<< setprecision(2)<<racetime2<<endl;
+		cout<<"2nd Place: "<< setw(10) <<name3<<" "<< setprecision(2)<<racetime3<<endl;
+		cout<<"3rd Place: "<< setw(10) <<name1<<" "<< setprecision(2)<<racetime1<<endl;
 	}
 }
 
@@ -78,15 +78,15 @@ if (racetime2 > racetime1 && racetime2 > racetime3)
 {
 	if (racetime1 > racetime3)
 	{
-		cout<<"First Place: "<<name3<<" Time : "<<racetime3<<endl;
-		cout<<"Second Place: "<<name1<<" Time : "<<racetime1<<endl;
-		cout<<"Third Place: "<<name2<<" Time : "<<racetime2<<endl;
+		cout<<"1st Place: "<< setw(10) <<name3<<" "<< setprecision(2)<<racetime3<<endl;
+		cout<<"2nd Place: "<< setw(10) <<name1<<" "<< setprecision(2)<<racetime1<<endl;
+		cout<<"3rd Place: "<< setw(10) <<name2<<" "<< setprecision(2)<<racetime2<<endl;
 	}
 	else
 	{
-		cout<<"First Place: "<<name1<<" Time : "<<racetime1<<endl;
-		cout<<"Second Place: "<<name3<<" Time : "<<racetime3<<endl;
-		cout<<"Third Place: "<<name2<<" Time : "<<racetime2<<endl;
+		cout<<"1st Place: "<< setw(10) <<name1<<" "<< setprecision(2)<<racetime1<<endl;
+		cout<<"2nd Place: "<< setw(10) <<name3<<" "<< setprecision(2)<<racetime3<<endl;
+		cout<<"3rd Place: "<< setw(10) <<name2<<" "<< setprecision(2)<<racetime2<<endl;
 	}
 }
 
@@ -94,15 +94,15 @@ if (racetime3 > racetime2 && racetime3 > racetime1)
 {
 	if (racetime2 > racetime1)
 	{
-		cout<<"First Place: "<<name1<<" Time : "<<racetime1<<endl;
-		cout<<"Second Place: "<<name2<<" Time : "<<racetime2<<endl;
-		cout<<"Third Place: "<<name3<<" Time : "<<racetime3<<endl;
+		cout<<"1st Place: "<< setw(10) <<name1<<" "<< setprecision(2)<<racetime1<<endl;
+		cout<<"2nd Place: "<< setw(10) <<name2<<" "<< setprecision(2)<<racetime2<<endl;
+		cout<<"3rd Place: "<< setw(10) <<name3<<" "<< setprecision(2)<<racetime3<<endl;
 	}
 	else
 	{
-		cout<<"First Place: "<<name2<<" Time : "<<racetime2<<endl;
-		cout<<"Second Place: "<<name1<<" Time : "<<racetime1<<endl;
-		cout<<"Third Place: "<<name3<<" Time : "<<racetime3<<endl;
+		cout<<"1st Place: "<< setw(10) <<name2<<" "<< setprecision(2)<<racetime2<<endl;
+		cout<<"2nd Place: "<< setw(10) <<name1<<" "<< setprecision(2)<<racetime1<<endl;
+		cout<<"3rd Place: "<< setw(10) <<name3<<" "<< setprecision(2)<<racetime3<<endl;
 	}
 }
 
