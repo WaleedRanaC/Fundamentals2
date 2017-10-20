@@ -1,0 +1,108 @@
+/******************************************************************************
+Waleed Rana
+
+*******************************************************************************/
+#include <string>
+#include <iostream>
+
+using namespace std;
+const int SIZE =20;
+class TestGrader
+{
+  private:
+    char answers[SIZE];
+    
+  public:
+    void setAnswers(char  key[]);
+    void grade(char key[]);
+};
+
+void TestGrader:: setAnswers(char  key[])//setKey
+{
+    for (int i =0; i<20; i++)
+    {
+        answers[i]=key[i];
+    }
+}
+
+void TestGrader:: grade(char key[])
+{
+    int sum=0;
+    char wrongOne[20];
+    char rightAnswers[20] = {'B', 'D', 'A', 'A', 'C', 'A', 'B', 'A', 'C', 'D', 'B', 'C', 'D', 'A', 'D', 'C', 'C', 'B', 'D', 'A'};//right answers
+    for (int i=0; i<20; i++)
+    {
+        for (int j = 0; j < 20; j++)
+        {
+            if (key[i]==rightAnswers[i])
+            {
+                sum++; 
+            }
+        
+            if (key[i]!=rightAnswers[i])
+            {
+                wrongOne[j] = i;
+            }
+        }
+    }
+    cout<<"You got "<<sum<<"/20 correct"<<endl;
+    cout<<"You got "<<20 -sum<<" wrong"<<endl;
+    for (int z = 0; z < 20; z++)
+    {
+        cout<<wrongOne[z]<<endl;
+    }
+    if (sum>=15)
+    {
+        cout<<"You passed"<<endl;
+    }
+    else
+    {
+        cout<<"You failed!";
+    }
+
+}
+bool validateInput(char ch)//validate the input
+{
+    switch(ch)
+    {
+        case 'A':
+            return true;
+        case 'B':
+            return true;
+        case 'C':
+            return true;
+        case 'D':
+            return true;
+    }
+    return false;
+}
+void input(TestGrader &tG)
+{
+    char answers[SIZE];
+    for (int i=0; i<20; i++)
+    {
+        cout<<"Enter your answer ";
+        cin>>answers[i];
+        while (!validateInput(answers[i]))
+        {
+            cout<<"INVALID ENTRY TRY AGAIN";
+            cin>>answers[i];
+        }
+    }
+    tG.setAnswers(answers);
+    tG.grade(answers);
+}
+int main()
+{
+    TestGrader tG;
+    
+    
+    input(tG);
+    
+    
+
+    return 0;
+}
+
+
+
