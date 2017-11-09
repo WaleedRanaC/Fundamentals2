@@ -1,0 +1,46 @@
+// This program totals and averages the sales figures for 
+// any number of days. The figures are stored in a
+// normal array.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+   int numDays;  
+   double sales [numDays],       // To dynamically allocate an array
+	      total = 0.0,           // Accumulator
+          average = 0.0;               // To hold average sales
+                   // To hold number of days of sales
+
+   // Get number of days of sales
+   cout << "How many days of sales figures do you wish ";
+   cout << "to process? ";
+   cin >> numDays;
+
+  
+   // Get the sales figures for each day using array index
+   cout << "Enter the sales figures below.\n";
+   for (int count = 0; count < numDays; count++)
+   {
+       cout << "Day " << (count + 1) << ": ";
+       cin >> sales[count];
+   }
+
+   // Calculate the total sales
+   for (int count = 0; count < numDays; count++)
+   {
+       total += sales[count];
+   }
+
+   // Calculate the average sales per day
+   average = total / numDays;
+
+   // Display the results
+   cout << setprecision(2) << fixed << showpoint;
+   cout << "\n\nTotal Sales: $" << total << endl;
+   cout << "Average Sales: $" << average << endl;
+
+  
+   return 0;
+}
